@@ -46,5 +46,16 @@ for (let conditon of winnerConditon){
 }
 }
 function showResult(result){
+    boxes.forEach(box=>{
+        box.disabled = true;
+        box.classList.remove("hover");
+    })
+    msg.classList.remove("hide");
+    span.innerText = result;
+    if(result==="X"){
+        box.style.color = "red";
+    }else{
+        box.style.color = "rgb(17,54,182)";
+    }
 
 }
