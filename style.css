@@ -38,7 +38,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 border: none;
-
+cursor: pointer;
 }
 .hover:hover{
     box-shadow:inset 2px 5px 10px rgba(0, 0, 0, 0.8);
@@ -68,6 +68,7 @@ justify-content: center;
     justify-self: center;
     font-size: 20px;
     font-weight: 800;
+    cursor: pointer;
 }
 .box1{
     border-radius: 10px 0px 0px 0px;
@@ -125,6 +126,7 @@ justify-content: center;
     background-color: rgba(255, 255, 255, 0.2); /* Change background for hover */
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8); /* Change shadow */
     color: #00ffff; /* Optional: Change text color on hover */
+    font-size: large;
 }
 
 #ng{
