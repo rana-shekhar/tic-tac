@@ -1,4 +1,8 @@
 let boxes = document.querySelectorAll(".boxes");
+let turn1 = document.querySelector(".turn1");
+let turn2 = document.querySelector(".turn2");
+let msg = document.querySelector(".msg");
+let span = document.querySelector("#result");
 let turnX = true;
 let winnerConditon =[
 [0,1,2],
@@ -15,10 +19,14 @@ boxes.forEach(box=>{
      if(turnX){
         box.innerText = "X";
         box.style.color = "red";
+        turn2.classList.add("bs");
+        turn1.classList.remove("bs");
         turnX =false;
      }else{
         box.innerText = "O";
         box.style.color = "rgb(17,54,182)";
+        turn1.classList.add("bs");
+        turn2.classList.remove("bs");
         turnX = true;
      }
      checkWinner();
