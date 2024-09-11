@@ -49,9 +49,15 @@ align-items: center;
 justify-content: center;
 }
 .choose{
-    width: 40%;
+    width: 30%;
     height: 50%;
-    background-color: black;
+    background-color: transparent;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.8),-2px -5px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding-left: 30px;
 }
 .turn1,.turn2{
     width: 50%;
@@ -59,4 +65,24 @@ justify-content: center;
     display: flex;
     align-items: center;
     justify-self: center;
+    font-size: 20px;
+    font-weight: 800;
+}
+.box1{
+    border-radius: 10px 0px 0px 0px;
+}
+.box3{
+    border-radius: 0px 10px 0px 0px;
+}
+.box7{
+    border-radius: 0px 0px 0px 10px;
+}
+.box9{
+    border-radius: 0px 0px 10px 0px;
+}
+.turn1{
+    color: red;
+}
+.turn2{
+    color: blue;
 }
