@@ -18,6 +18,7 @@ height: 90vh;
 max-width: 450px;
 background-color: rgb(31, 43, 54);
 padding: 2px 20px;
+position: relative;
 
 }
 .game{
@@ -104,4 +105,28 @@ justify-content: center;
 }
 .hide{
     display: none;
+}
+.btn {
+    position: absolute;
+    bottom: 20px;
+    width: 100px;
+    padding: 10px 5px;
+    background-color: rgba(255, 255, 255, 0.1); /* Added slight background color */
+    border: none;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: aliceblue;
+    font-size: 15px;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Change background for hover */
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8); /* Change shadow */
+    color: #00ffff; /* Optional: Change text color on hover */
+}
+
+#ng{
+    right: 20px;
 }
