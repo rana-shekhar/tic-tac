@@ -7,7 +7,8 @@ let reset = document.getElementById("reset");
 let newGame = document.getElementById("ng");
 let turnX = true;
 let gameActive = true;
-
+let clickSound = new Audio("blip.mp3"); // Corrected this line
+let winnerSound = new Audio("winner.mp3");
 let winnerConditon = [
     [0, 1, 2],
     [3, 4, 5],
@@ -30,9 +31,21 @@ reset.addEventListener('click', () => {
     turn1.classList.add("bs");  
     turn2.classList.remove("bs"); 
 });
+ng.addEventListener('click', () => {
+    boxes.forEach(box => {
+        box.innerText = "";  
+        box.classList.add("hover");  
+        gameActive = true;  
+    });
+    msg.classList.add("hide");  
+    turnX = true;  
+    turn1.classList.add("bs");  
+    turn2.classList.remove("bs"); 
+});
 
 boxes.forEach(box => {
     box.addEventListener('click', () => {
+        clickSound.play(); // Play the sound
         if (box.innerText === "" && gameActive) {  
             if (turnX) {
                 box.innerText = "X";
@@ -61,7 +74,7 @@ function checkWinner() {
         if (box1 !== "" && box2 !== "" && box3 !== "") {
             if (box1 === box2 && box2 === box3) {
                 showResult(box1);  
-                return;
+                winnerSound.play();
             }
         }
     }
