@@ -7,7 +7,7 @@
 body{
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    background-color: rgb(31, 38, 44);;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,7 +102,7 @@ justify-content: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: aliceblue;
+    color: red;
     gap: 5px;
 }
 .hide{
@@ -133,3 +133,8 @@ justify-content: center;
 #ng{
     right: 20px;
 }
+.highlight {
+    background-color: yellow; /* You can style it any way you want */
+    transition: background-color 0.5s ease;
+}
+

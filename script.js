@@ -7,8 +7,8 @@ let reset = document.getElementById("reset");
 let newGame = document.getElementById("ng");
 let turnX = true;
 let gameActive = true;
-let clickSound = new Audio("blip.mp3"); // Corrected this line
-let winnerSound = new Audio("winner.mp3");
+let clickSound = new Audio("blip.mp3"); // Corrected file path for the click sound
+let winnerSound = new Audio("winner.mp3"); // Corrected file path for the winner sound
 let winnerConditon = [
     [0, 1, 2],
     [3, 4, 5],
@@ -24,6 +24,7 @@ reset.addEventListener('click', () => {
     boxes.forEach(box => {
         box.innerText = "";  
         box.classList.add("hover");  
+        box.classList.remove("highlight"); // Remove any previous highlights
         gameActive = true;  
     });
     msg.classList.add("hide");  
@@ -31,10 +32,12 @@ reset.addEventListener('click', () => {
     turn1.classList.add("bs");  
     turn2.classList.remove("bs"); 
 });
-ng.addEventListener('click', () => {
+
+newGame.addEventListener('click', () => {
     boxes.forEach(box => {
         box.innerText = "";  
         box.classList.add("hover");  
+        box.classList.remove("highlight"); // Remove any previous highlights
         gameActive = true;  
     });
     msg.classList.add("hide");  
@@ -74,7 +77,17 @@ function checkWinner() {
         if (box1 !== "" && box2 !== "" && box3 !== "") {
             if (box1 === box2 && box2 === box3) {
                 showResult(box1);  
-                winnerSound.play();
+                winnerSound.play(); // Play the winner sound
+                
+                boxes.forEach(box => {
+                    box.classList.remove("bs"); // Remove 'bs' class from all boxes
+                });
+
+                // Highlight the winning boxes
+                boxes[condition[0]].classList.add("highlight");
+                boxes[condition[1]].classList.add("highlight");
+                boxes[condition[2]].classList.add("highlight");
+                return;
             }
         }
     }
